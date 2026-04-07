@@ -1,18 +1,16 @@
 aid: hilton
-url: 
-  https://raw.githubusercontent.com/api-evangelist/hilton/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/hilton/refs/heads/main/apis.yml
 modified: '2026-03-21'
 apis:
   - aid: hilton:hilton-api
     name: Hilton Developer API
     tags:
-      - Hotels
       - Hospitality
-      - Travel
-      - Reservations
+      - Hotels
       - Loyalty
-    image: 
-      https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+      - Reservations
+      - Travel
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     baseURL: https://api.hilton.com
     humanURL: https://developer.hilton.com/
     properties:
