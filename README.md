@@ -16,7 +16,7 @@ Hilton is a Fortune 500 company that provides developer APIs and integration cap
 ## Timestamps
 
 - **Created:** 2026-03-21
-- **Modified:** 2026-03-21
+- **Modified:** 2026-04-28
 
 ## APIs
 
@@ -38,9 +38,11 @@ Hilton provides developer APIs for hotel search, availability, reservations, and
 ## Common Properties
 
 - [Website](https://www.hilton.com)
+- [Developer Portal](https://developer.hilton.com/)
+- [Honors Program](https://www.hilton.com/en/hilton-honors/)
 
 ## Maintainers
 
-**FN:** API Evangelist
+**FN:** Kin Lane
 
-**Email:** info@apievangelist.com
+**Email:** kin@apievangelist.com
