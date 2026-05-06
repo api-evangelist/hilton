@@ -8,10 +8,11 @@ alignedWith:
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 provider: Hilton
 providerId: hilton
-publisherName: Hilton
-serviceCategory: API
+publisherName: Hilton Worldwide Holdings Inc.
+serviceCategory: Hospitality / Travel
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
   - Hospitality
   - Hotels
@@ -19,26 +20,49 @@ tags:
   - Reservations
   - Loyalty
   - FinOps
-  - Cost Management
   - FOCUS
-description: FinOps framework definition for the Hilton API surface. Provides a FOCUS-aligned mapping
-  for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
+notes: Hilton's API surface is partner-gated; FinOps for a Hilton integration is typically a take-rate /
+  commission shape (booking commission to OTAs, channel-management fees, loyalty-points reciprocity) plus
+  bilateral partner-program fees. No public price book exists; this stub captures the right meter shape.
+description: 'FOCUS-aligned FinOps stub for Hilton. Partner-gated; commission and per-booking economics
+  govern the FinOps shape, with rates set in bilateral connectivity agreements.'
+sources:
+  - https://www.hilton.com/en/corporate/
+billingModel:
+  pricingCategory: Commission / Take Rate (per partner agreement)
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+    - Usage
+    - Purchase
+    - Adjustment
+    - Refund
+focusColumns:
+  ServiceName: Hilton
+  ServiceCategory: Hospitality / Travel
+  ProviderName: Hilton
+  PublisherName: Hilton Worldwide Holdings Inc.
+  InvoiceIssuerName: Hilton Worldwide Holdings Inc.
+  PricingCategory: Commission
+  PricingUnit: booking
+  BillingCurrency: USD
+  ChargeCategory: Usage
 principles:
   - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
+    description: Reconcile booking activity through the partner portal's reporting feeds (booking,
+      cancellation, no-show, loyalty-event events) against Hilton statements.
   - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
+    description: Tag bookings by partner channel, brand, market, and corporate-rate code so commission
+      and revenue-share are attributable per business unit.
   - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
+    description: Cost levers are commission renegotiation, parity enforcement, and shifting traffic to
+      lower-commission direct or loyalty channels.
   - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
+    description: Distribution / commercial team owns commission accounts; technology team owns
+      connectivity uptime and 429 / error rates.
 domains:
   - name: Understand Usage and Cost
     capabilities:
-      - Data Ingestion
       - Allocation
       - Reporting and Analytics
       - Anomaly Management
@@ -47,88 +71,75 @@ domains:
       - Planning and Estimating
       - Forecasting
       - Budgeting
-      - Benchmarking
       - Unit Economics
   - name: Optimize Usage and Cost
     capabilities:
-      - Architecting for Cloud
       - Rate Optimization
       - Workload Optimization
-      - Cloud Sustainability
       - Licensing and SaaS
   - name: Manage the FinOps Practice
     capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
       - Invoicing and Chargeback
       - Onboarding Workloads
       - Intersecting Disciplines
-billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
-  billingCurrency: USD
-  chargeCategories:
-    - Usage
-    - Purchase
-    - Tax
-    - Credit
-    - Adjustment
-  chargeFrequency: Recurring
-focusColumns:
-  ServiceName: Hilton
-  ServiceCategory: Developer Tools / API
-  ProviderName: Hilton
-  PublisherName: Hilton
-  InvoiceIssuerName: Hilton
-  PricingCategory: Usage-Based
-  PricingUnit: request
-  BillingCurrency: USD
-  ChargeCategory: Usage
 meters:
-  - name: api_requests
-    description: Count of billable API requests
-    unit: request
+  - name: bookings
+    description: Reservations confirmed through the partner connectivity API
+    unit: booking
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
+      - partner_id
+      - brand
+      - property_id
+      - market
+      - rate_code
+  - name: room_nights
+    description: Room nights generated
+    unit: room-night
     aggregation: sum
     dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
+      - partner_id
+      - brand
+      - property_id
+  - name: gross_booking_value
+    description: Gross dollar value of confirmed bookings
+    unit: USD
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
+      - partner_id
+      - brand
+      - property_id
+  - name: commissions
+    description: Commission paid (or due) to the partner
+    unit: USD
+    aggregation: sum
+    dimensions:
+      - partner_id
+      - brand
+  - name: loyalty_points_issued
+    description: Hilton Honors points issued or accrued via the partner
+    unit: point
+    aggregation: sum
+    dimensions:
+      - partner_id
+      - brand
 apis:
   - name: Hilton Developer API
     baseURL: https://api.hilton.com
     tags:
       - Hospitality
       - Hotels
-      - Loyalty
       - Reservations
-      - Travel
+      - Loyalty
     serviceName: Hilton Developer API
-    serviceCategory: API
+    serviceCategory: Hospitality / Travel
 unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+  - name: Effective Commission Rate
+    metric: commissions / gross_booking_value
+    target: per partner agreement
+  - name: Cost per Booking
+    metric: commissions / bookings
+    target: per partner agreement
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
