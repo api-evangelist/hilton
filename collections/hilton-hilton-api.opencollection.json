@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Hilton Developer API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Hotels",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get API status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hilton.com/status"
+          },
+          "docs": "Returns the current status of the API."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
