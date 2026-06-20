@@ -6,7 +6,7 @@ description: >-
   APIs for hotel search, availability, reservations, loyalty program integration, and partner distribution. Most Hilton
   APIs are partner-gated and require credentials issued through the Hilton developer program.
 type: Index
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Hospitality
   - Hotels
@@ -24,7 +24,7 @@ apis:
       Hilton provides developer APIs for hotel search, availability, reservations, and loyalty program integration. The
       APIs enable travel partners and corporate clients to integrate Hilton booking capabilities. Access is gated
       through the Hilton developer program.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://developer.hilton.com/
     baseURL: https://api.hilton.com
     tags:
