@@ -43,7 +43,7 @@ common:
     url: https://www.linkedin.com/company/hilton
   - type: Website
     url: https://www.hilton.com
-  - type: Developer Portal
+  - type: DeveloperPortal
     url: https://developer.hilton.com/
   - type: Honors Program
     url: https://www.hilton.com/en/hilton-honors/
