@@ -1,32 +1,27 @@
 openapi: 3.1.0
 info:
-  title: Hilton Developer API
-  description: >-
-    Hilton provides developer APIs for hotel search, availability, reservations, and loyalty program integration. The APIs enable travel partners and corporate clients to integrate Hilton booking capabilities.
+  title: Hilton Developer Hotels API
+  description: Hilton provides developer APIs for hotel search, availability, reservations, and loyalty program integration. The APIs enable travel partners and corporate clients to integrate Hilton booking capabilities.
   version: '1.0'
   contact:
     name: Hilton Developer Support
     url: https://developer.hilton.com/
-externalDocs:
-  description: Documentation
-  url: https://developer.hilton.com/
 servers:
-  - url: https://api.hilton.com
-    description: Production
-tags:
-  - name: Hotels
-    description: Hotels operations
+- url: https://api.hilton.com
+  description: Production
 security:
-  - bearerAuth: []
+- bearerAuth: []
+tags:
+- name: Hotels
+  description: Hotels operations
 paths:
   /status:
     get:
       operationId: getStatus
       summary: Get API status
-      description: >-
-        Returns the current status of the API.
+      description: Returns the current status of the API.
       tags:
-        - Hotels
+      - Hotels
       responses:
         '200':
           description: Success
@@ -48,3 +43,6 @@ components:
     bearerAuth:
       type: http
       scheme: bearer
+externalDocs:
+  description: Documentation
+  url: https://developer.hilton.com/
