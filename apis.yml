@@ -6,7 +6,20 @@ description: >-
   APIs for hotel search, availability, reservations, loyalty program integration, and partner distribution. Most Hilton
   APIs are partner-gated and require credentials issued through the Hilton developer program.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/hilton.png
 tags:
   - Hospitality
   - Hotels
@@ -18,26 +31,18 @@ created: '2026-03-21'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: hilton:hilton-api
-    name: Hilton Developer API
-    description: >-
-      Hilton provides developer APIs for hotel search, availability, reservations, and loyalty program integration. The
-      APIs enable travel partners and corporate clients to integrate Hilton booking capabilities. Access is gated
-      through the Hilton developer program.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://developer.hilton.com/
-    baseURL: https://api.hilton.com
-    tags:
-      - Hospitality
-      - Hotels
-      - Loyalty
-      - Reservations
-      - Travel
-    properties:
-      - type: Documentation
-        url: https://developer.hilton.com/
-      - type: OpenAPI
-        url: openapi/hilton-hilton-api-openapi.yml
+- aid: hilton:hilton-hotels-api
+  name: Hilton Hotels API
+  description: Hotels operations
+  humanURL: https://developer.hilton.com/
+  baseURL: https://api.hilton.com
+  tags:
+  - Hotels
+  properties:
+  - type: OpenAPI
+    url: openapi/hilton-hotels-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hilton.com/
 common:
   - type: AgenticAccess
     url: agentic-access/hilton-agentic-access.yml
