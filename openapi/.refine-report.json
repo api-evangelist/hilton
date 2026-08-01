@@ -1,0 +1,14 @@
+{
+  "provider": "hilton",
+  "sources": [
+    "hilton-hotels-api-openapi.yml"
+  ],
+  "outputs": [
+    "hilton-hotels-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
