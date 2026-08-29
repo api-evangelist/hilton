@@ -6,6 +6,17 @@ description: >-
   APIs for hotel search, availability, reservations, loyalty program integration, and partner distribution. Most Hilton
   APIs are partner-gated and require credentials issued through the Hilton developer program.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
