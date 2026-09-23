@@ -1,7 +1,9 @@
 ---
 title: Hilton Worldwide Holdings Inc. Common Stock (HLT)
 url: https://www.financialcontent.com/quote/NY:HLT/pressReleases
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Hilton Worldwide Holdings" press release artificial intelligence'
 position: 3
 source: serpapi-google

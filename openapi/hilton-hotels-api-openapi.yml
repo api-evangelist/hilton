@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Hilton Developer Hotels API
   description: Hilton provides developer APIs for hotel search, availability, reservations, and loyalty program integration. The APIs enable travel partners and corporate clients to integrate Hilton booking capabilities.

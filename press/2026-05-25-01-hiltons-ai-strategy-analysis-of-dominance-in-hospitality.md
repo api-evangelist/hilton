@@ -1,7 +1,9 @@
 ---
 title: 'Hilton''s AI Strategy: Analysis of Dominance in Hospitality ...'
 url: https://www.klover.ai/hilton-ai-strategy-analysis-of-dominance-in-hospitality-hotel-ai/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Hilton Worldwide Holdings" press release artificial intelligence'
 position: 1
 source: serpapi-google
