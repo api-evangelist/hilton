@@ -139,10 +139,8 @@ apis:
 unitEconomics:
   - name: Effective Commission Rate
     metric: commissions / gross_booking_value
-    target: per partner agreement
   - name: Cost per Booking
     metric: commissions / bookings
-    target: per partner agreement
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
