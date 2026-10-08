@@ -56,6 +56,12 @@ apis:
   - type: Documentation
     url: https://developer.hilton.com/
 common:
+  - type: Plans
+    url: plans/hilton-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/hilton-rate-limits.yml
+  - type: FinOps
+    url: finops/hilton-finops.yml
   - type: AgenticAccess
     url: agentic-access/hilton-agentic-access.yml
   - type: DomainSecurity
