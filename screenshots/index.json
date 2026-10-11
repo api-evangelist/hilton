@@ -1,0 +1,11 @@
+[
+  {
+    "repo": "hilton",
+    "captured_at": "2026-10-11T190201",
+    "source_url": "https://hilton.com",
+    "source_type": "root-domain",
+    "file": "hilton-2026-10-11T190201.png",
+    "bytes": 38198,
+    "capture": "playwright-local"
+  }
+]
